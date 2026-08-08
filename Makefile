@@ -1,4 +1,4 @@
-.PHONY: build typecheck lint format format-check test test-watch check bump bump-minor bump-major release-check prepack help
+.PHONY: build typecheck lint format format-check test test-watch check clean bump bump-minor bump-major release-check prepack help
 
 # Default target
 .DEFAULT_GOAL := help
@@ -35,6 +35,10 @@ test-watch:
 check:
 	pnpm check
 
+# Clean build artifacts
+clean:
+	rm -rf dist coverage *.tgz
+
 # Bump patch version
 bump:
 	pnpm version patch
@@ -66,6 +70,7 @@ help:
 	@echo "  test          - Run tests using vitest"
 	@echo "  test-watch    - Run tests in watch mode"
 	@echo "  check         - Run typecheck and lint"
+	@echo "  clean         - Remove build artifacts (dist, coverage, tarballs)"
 	@echo "  bump          - Bump patch version"
 	@echo "  bump-minor    - Bump minor version"
 	@echo "  bump-major    - Bump major version"
