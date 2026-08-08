@@ -1,0 +1,9 @@
+{
+  "name": "basic-project",
+  "description": "A minimal example project used for testing pi-mplan.",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "eslint ."
+  }
+}
