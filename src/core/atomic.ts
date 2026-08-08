@@ -50,7 +50,7 @@ export function ensureGitIgnore(cwd: string): {
   if (hasPlanMark) return { skipped: false, added: false, file };
 
   if (content.length && !content.endsWith("\n")) content += "\n";
-  content += "# plan.md — private implementation ledger\nplan.md\n";
+  content += "# plan.md: private implementation ledger\nplan.md\n";
   // Keep the general glob so future plan-named files stay ignored too.
   content += "plan*\n";
   atomicWrite(file, content);

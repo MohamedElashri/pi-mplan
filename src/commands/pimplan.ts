@@ -1,5 +1,5 @@
 /**
- * /mplan command — generate plan.md and/or AGENTS.md for the current project.
+ * /mplan command: generate plan.md and/or AGENTS.md for the current project.
  *
  * pi-mplan writes a deterministic scaffold from the best available template
  * (project → personal → bundled) and then, unless scaffold-only is requested,
@@ -93,7 +93,7 @@ function existingTargets(
 
 /**
  * Ask before regenerating files that already exist. Skips confirmation when
- * the host has no dialog-capable UI (print/json modes) — there the command
+ * the host has no dialog-capable UI (print/json modes). There the command
  * regenerates as before.
  */
 async function confirmOverwrites(
@@ -129,7 +129,7 @@ function reportOutcome(
         pi.sendUserMessage([{ type: "text", text: combined }]),
       ).catch(() => {});
     } catch {
-      /* no active session — scaffold still written */
+      /* no active session; scaffold still written */
     }
   }
 }
@@ -177,7 +177,7 @@ export function registerPimplanCommand(pi: ExtensionAPI): void {
         ctx.hasUI,
       );
       if (allowed.length === 0) {
-        ctx.ui.notify("Nothing changed — files left as-is.", "info");
+        ctx.ui.notify("Nothing changed; files left as-is.", "info");
         return;
       }
 

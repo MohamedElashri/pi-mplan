@@ -36,7 +36,7 @@ export function renderAgents(
   const summary =
     facts.description ||
     facts.readmeIntro ||
-    `${facts.name} — TODO: describe what the project does, who uses it, main language/runtime, and important domain constraints.`;
+    `${facts.name}: TODO describe what the project does, who uses it, main language/runtime, and important domain constraints.`;
   return template
     .replace(
       /TODO: Describe in 2-5 sentences:[\s\S]*?- Important domain constraints\./,

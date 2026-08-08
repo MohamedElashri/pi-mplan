@@ -120,5 +120,5 @@ export function describeTemplatesDir(cwd: string): string {
   if (existsSync(project)) return project;
   const user = userTemplatesDir();
   if (existsSync(user)) return user;
-  return `${PIMPLAN_DIR} (not yet created — run /mplan init)`;
+  return `${PIMPLAN_DIR} (not yet created; run /mplan init)`;
 }

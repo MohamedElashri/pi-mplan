@@ -108,7 +108,7 @@ function buildDetailsText(details: CreatePlanDetails, theme: Theme): string {
     lines.push(
       theme.fg(
         "dim",
-        "  refinement queued — review the follow-up to complete the files.",
+        "  refinement queued. Review the follow-up to complete the files.",
       ),
     );
   }

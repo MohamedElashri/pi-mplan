@@ -1,5 +1,5 @@
 /**
- * pi-mplan entry point — plan.md + AGENTS.md generator extension for Pi.
+ * pi-mplan entry point: plan.md + AGENTS.md generator extension for Pi.
  *
  * Registers:
  *   - /mplan command (manual generation)

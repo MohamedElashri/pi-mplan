@@ -33,6 +33,40 @@ global default for projects without their own templates.
   `plan.md`/`AGENTS.md` that already exists, so your edits are never silently
   overwritten.
 
+## Command reference
+
+| Command | Action |
+| --- | --- |
+| `/mplan` | Generate + refine both `plan.md` and `AGENTS.md` |
+| `/mplan plan` | Generate/refine `plan.md` only |
+| `/mplan agents` | Generate/refine `AGENTS.md` only |
+| `/mplan init` | Copy default templates into `.pi/pimplan/` for customization |
+| `/mplan scaffold` | Write deterministic scaffolds only (no LLM step) |
+| `/mplan verify` | Report leftover placeholders in the generated files |
+| `/mplan sync` | Pull personal templates from the `agentic` repo to `~/.pi/mplan/` |
+| `/mplan help` | Show help |
+
+### Tool usage
+
+The `create_plan` tool is registered so the agent can generate files on its
+own. Call it with `target: all | plan | agents`. Pass `scaffoldTemplates: true`
+to also materialize the project templates first.
+
+## UI & safety behavior
+
+The extension improves the interaction with the host UI:
+
+- **Overwrite guard** (details above under "Generated files"). When
+  `plan.md`/`AGENTS.md` already exist, `/mplan` asks for confirmation before
+  regenerating them, so your existing edits are never silently clobbered
+  (dialog modes only).
+- **Status feedback**: the host status bar shows
+  "scanning repo..." / "pulling templates..." while work runs, then clears.
+- **Color-coded results**: the `create_plan` tool renders a theme-aware
+  summary (bold filenames, green when complete, amber when placeholders remain).
+- **Notify levels**: scaffold/verify results with leftover placeholders are
+  routed to the appropriate severity so you can spot incomplete files quickly.
+
 ## Placeholders
 
 The generator fills placeholders it can answer deterministically from the
@@ -66,24 +100,24 @@ Where a `.env.example` exists, setup may include an env-seeding step.
 
 ### `AGENTS.md`
 
-- **Project Summary** — what the project does, who uses it, main
+- **Project Summary**: what the project does, who uses it, main
   language/runtime, domain constraints.
-- **Repository Layout** — top-level structure.
-- **Development Commands** — exact setup/build/test/lint/format/run (or
+- **Repository Layout**: top-level structure.
+- **Development Commands**: exact setup/build/test/lint/format/run (or
   `Not available`).
-- **Working Rules** — files to read before editing, when to create `plan.md`.
-- **Implementation Rules** — diff size, naming, determinism, dependencies.
-- **Testing** — narrowest-first validation strategy.
-- **Documentation** — when to update user-facing docs vs. private `plan.md`.
-- **Special Constraints** — security/performance/compat/data/deployment.
+- **Working Rules**: files to read before editing, when to create `plan.md`.
+- **Implementation Rules**: diff size, naming, determinism, dependencies.
+- **Testing**: narrowest-first validation strategy.
+- **Documentation**: when to update user-facing docs vs. private `plan.md`.
+- **Special Constraints**: security/performance/compat/data/deployment.
 
 ### `plan.md`
 
-- **Goal / Scope / Constraints** — final outcome and boundaries.
-- **Current State** — relevant files, existing behavior, commands, risks.
-- **Commands** — setup/build/test/lint/format/run.
-- **Acceptance Criteria / Test Plan** — how you know the task is done.
-- **Phases 0-2** — orientation, implementation, validation; each with
+- **Goal / Scope / Constraints**: final outcome and boundaries.
+- **Current State**: relevant files, existing behavior, commands, risks.
+- **Commands**: setup/build/test/lint/format/run.
+- **Acceptance Criteria / Test Plan**: how you know the task is done.
+- **Phases 0-2**: orientation, implementation, validation; each with
   deliverables, acceptance criteria, and status/completion/deviation notes.
 
 Customize any section in your `.pi/pimplan/*.md` files; the generator preserves
@@ -93,5 +127,5 @@ your structure and only substitutes the recognized placeholders listed above.
 
 Run `/mplan verify` (or read the placeholder counts in the tool output) to see
 which `TODO`/`TBD`/`FIXME` markers remain in each generated file. The check
-ignores `Not available` and prose mentions of keywords — only placeholder-style
+ignores `Not available` and prose mentions of keywords; only placeholder-style
 occurrences (`TODO: …`, `- TODO`, `1. TBD: …`) are reported.

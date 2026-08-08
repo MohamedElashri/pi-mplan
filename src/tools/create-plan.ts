@@ -1,5 +1,5 @@
 /**
- * create_plan tool — agent-driven plan.md / AGENTS.md generation.
+ * create_plan tool: agent-driven plan.md / AGENTS.md generation.
  *
  * Writes deterministic scaffolds for the requested targets and returns a
  * refinement instruction so the calling agent can complete them with real

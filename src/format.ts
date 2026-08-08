@@ -73,7 +73,7 @@ export function formatInitResult(r: InitResult): string {
 
 export function helpText(): string {
   return [
-    "pi-mplan — generate plan.md and AGENTS.md from your templates",
+    "pi-mplan: generate plan.md and AGENTS.md from your templates",
     "",
     "Generate:",
     "  /mplan                Generate + refine both plan.md and AGENTS.md",
