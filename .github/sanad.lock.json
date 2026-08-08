@@ -3,8 +3,8 @@
   "generated_by": "sanad",
   "entries": [
     {
-      "file": ".github/workflows/publish.yml",
-      "node": "jobs.publish.steps[0].uses",
+      "file": ".github/workflows/ci.yml",
+      "node": "jobs.test.steps[0].uses",
       "owner": "actions",
       "repo": "checkout",
       "path": "",
@@ -16,8 +16,8 @@
       "timestamp_source": "release"
     },
     {
-      "file": ".github/workflows/publish.yml",
-      "node": "jobs.publish.steps[1].uses",
+      "file": ".github/workflows/ci.yml",
+      "node": "jobs.test.steps[1].uses",
       "owner": "pnpm",
       "repo": "action-setup",
       "path": "",
@@ -29,8 +29,8 @@
       "timestamp_source": "release"
     },
     {
-      "file": ".github/workflows/publish.yml",
-      "node": "jobs.publish.steps[2].uses",
+      "file": ".github/workflows/ci.yml",
+      "node": "jobs.test.steps[2].uses",
       "owner": "actions",
       "repo": "setup-node",
       "path": "",
