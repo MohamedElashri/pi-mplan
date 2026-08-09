@@ -1,4 +1,4 @@
-.PHONY: build typecheck lint format format-check test test-watch check clean bump bump-minor bump-major release-check prepack help
+.PHONY: build typecheck lint format format-check test test-watch check clean update bump bump-minor bump-major release-check prepack help
 
 # Default target
 .DEFAULT_GOAL := help
@@ -39,6 +39,10 @@ check:
 clean:
 	rm -rf dist coverage *.tgz
 
+# Update dependencies within semver ranges (safe)
+update:
+	pnpm update
+
 # Bump patch version
 bump:
 	pnpm version patch
@@ -71,6 +75,7 @@ help:
 	@echo "  test-watch    - Run tests in watch mode"
 	@echo "  check         - Run typecheck and lint"
 	@echo "  clean         - Remove build artifacts (dist, coverage, tarballs)"
+	@echo "  update        - Update dependencies within semver ranges (safe)"
 	@echo "  bump          - Bump patch version"
 	@echo "  bump-minor    - Bump minor version"
 	@echo "  bump-major    - Bump major version"
