@@ -1,6 +1,6 @@
 {
   "name": "pi-mplan",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@11.2.2",
   "description": "Plan + AGENTS.md generator extension for Pi. Automates creating plan.md and AGENTS.md for your projects from your own templates",
   "license": "MIT",
