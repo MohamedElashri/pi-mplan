@@ -11,9 +11,7 @@
       "kind": "github-action",
       "logical_ref": "v7.0.1",
       "pinned_sha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
-      "resolved_at": "2026-08-05T10:48:02Z",
-      "timestamp": "2026-07-20T15:10:05Z",
-      "timestamp_source": "release"
+      "resolved_at": "2026-08-28T22:29:08Z"
     },
     {
       "file": ".github/workflows/ci.yml",
@@ -22,10 +20,10 @@
       "repo": "action-setup",
       "path": "",
       "kind": "github-action",
-      "logical_ref": "v6.0.9",
-      "pinned_sha": "0ebf47130e4866e96fce0953f49152a61190b271",
-      "resolved_at": "2026-08-05T10:48:02Z",
-      "timestamp": "2026-06-15T12:06:03Z",
+      "logical_ref": "v6.0.10",
+      "pinned_sha": "0977fd99725f1db4007ccb2928dbb4e90d06cc86",
+      "resolved_at": "2026-08-28T22:29:08Z",
+      "timestamp": "2026-08-03T12:06:25Z",
       "timestamp_source": "release"
     },
     {
@@ -37,9 +35,7 @@
       "kind": "github-action",
       "logical_ref": "v7.0.0",
       "pinned_sha": "820762786026740c76f36085b0efc47a31fe5020",
-      "resolved_at": "2026-08-05T10:48:02Z",
-      "timestamp": "2026-07-14T02:46:05Z",
-      "timestamp_source": "release"
+      "resolved_at": "2026-08-28T22:29:08Z"
     }
   ]
 }
