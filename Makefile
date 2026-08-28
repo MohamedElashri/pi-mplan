@@ -39,9 +39,12 @@ check:
 clean:
 	rm -rf dist coverage *.tgz
 
-# Update dependencies within semver ranges (safe)
+# Update dependencies to the latest versions, then verify everything still passes
 update:
-	pnpm update
+	pnpm update --latest
+	pnpm add -D typescript@~5.9.3
+	pnpm check
+	pnpm test
 
 # Bump patch version
 bump:
@@ -75,7 +78,7 @@ help:
 	@echo "  test-watch    - Run tests in watch mode"
 	@echo "  check         - Run typecheck and lint"
 	@echo "  clean         - Remove build artifacts (dist, coverage, tarballs)"
-	@echo "  update        - Update dependencies within semver ranges (safe)"
+	@echo "  update        - Update dependencies to the latest versions, then verify"
 	@echo "  bump          - Bump patch version"
 	@echo "  bump-minor    - Bump minor version"
 	@echo "  bump-major    - Bump major version"
